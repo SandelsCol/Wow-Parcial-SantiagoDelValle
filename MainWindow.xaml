@@ -1,0 +1,85 @@
+﻿<Window x:Class="FirstFantasy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirstFantasy"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF444444" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Name="BtnCreate" Visibility="Hidden" Content="Create" HorizontalAlignment="Left" Margin="177,351,0,0" VerticalAlignment="Top" Width="131" Click="BtnCreate_Click"/>
+        <ComboBox Name="CboxCharacter" Visibility="Hidden" HorizontalAlignment="Left" Margin="188,0,0,0" VerticalAlignment="Center" Width="120" >
+            <ComboBoxItem Content="" IsSelected="True" />
+            <ComboBoxItem Content="Cleric" />
+            <ComboBoxItem Content="Fighter" />
+            <ComboBoxItem Content="Rouge" />
+            <ComboBoxItem Content="Wizard" />
+        </ComboBox>
+        <TextBlock Name="TxtInventory" Visibility="Hidden" HorizontalAlignment="Left" Height="167" Margin="21,194,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Foreground="#FFB44D4D" Background="#FFB6B2B2"/>
+        <Label Content="" HorizontalAlignment="Left" Height="121" VerticalAlignment="Top" Width="248">
+            <Label.Background>
+                <ImageBrush ImageSource="/WOW-Shadowlands_Logo.jpg"/>
+            </Label.Background>
+        </Label>
+        <Label Name="lblinve" Visibility="Hidden" Content="Inventory" HorizontalAlignment="Left" Height="29" Margin="21,153,0,0" VerticalAlignment="Top" Width="135" Background="#FFB6B2B2"/>
+        <Label Name="lblclerci" Visibility="Hidden" Content="" HorizontalAlignment="Left" Height="170" Margin="516,60,0,0" VerticalAlignment="Top" Width="230">
+            <Label.Background>
+                <ImageBrush ImageSource="/priest.jpg"/>
+            </Label.Background>
+        </Label>
+        <Button Name="Delete" Visibility="Hidden" Content="Delete all Inventory" HorizontalAlignment="Left" Height="21" Margin="21,366,0,0" VerticalAlignment="Top" Width="135" Click="Button_Click"/>
+        <Label Name="clerigpng" Visibility="Hidden" Content="" HorizontalAlignment="Left" Height="153" Margin="400,88,0,0" VerticalAlignment="Top" Width="324">
+            <Label.Background>
+                <ImageBrush ImageSource="/priest.jpg"/>
+            </Label.Background>
+        </Label>
+        <Label  Name="Fightpng" Visibility="Hidden" Content="" HorizontalAlignment="Left" Height="153" Margin="400,88,0,0" VerticalAlignment="Top" Width="324">
+            <Label.Background>
+                <ImageBrush ImageSource="/WowChakraTalentosGuerrero.jpg"/>
+            </Label.Background>
+        </Label>
+        <Label Name="RouguePng" Visibility="Hidden" Content="" HorizontalAlignment="Left" Height="153" Margin="400,88,0,0" VerticalAlignment="Top" Width="324">
+            <Label.Background>
+                <ImageBrush ImageSource="/thumb-1920-219847.jpg"/>
+            </Label.Background>
+        </Label>
+        <Label Name="Wizard" Visibility="Hidden" Content="" HorizontalAlignment="Left" Height="153" Margin="400,88,0,0" VerticalAlignment="Top" Width="324">
+            <Label.Background>
+                <ImageBrush ImageSource="/7527fba970c07d8c29aa2b9cbdb5be08.jpg"/>
+            </Label.Background>
+        </Label>
+        <TextBox Name="HeroeName" Visibility="Hidden" HorizontalAlignment="Left" Height="25" Margin="189,155,0,0" Text="Name of ur heroe" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" TextAlignment="Center"/>
+        <TextBlock Name="Nameheroe" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="400,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" Background="#FFB6B2B2"/>
+        <TextBlock Name="LvlHeroe" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="400,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Background="#FFB6B2B2"/>
+        <TextBlock Name="Damageheroe" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="507,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Background="#FFB6B2B2"/>
+        <Label Name="Welcome" Visibility="Hidden" Content="" HorizontalAlignment="Left" Height="288" Margin="481,88,0,0" VerticalAlignment="Top" Width="265">
+            <Label.Background>
+                <ImageBrush ImageSource="/deathwing-world-of-warcraft-game-android-best-wallpaper.jpg"/>
+            </Label.Background>
+        </Label>
+        <Button Name="New" Visibility="Hidden" Content="New Heroe" HorizontalAlignment="Left" Height="37" Margin="400,366,0,0" VerticalAlignment="Top" Width="139"/>
+        <Button Name="Play" Visibility="Hidden" Content="Play" HorizontalAlignment="Left" Height="37" Margin="562,366,0,0" VerticalAlignment="Top" Width="184"/>
+        <TextBox Name="Username" HorizontalAlignment="Left" Height="32" Margin="288,145,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" TextAlignment="Center" FontSize="20"/>
+        <TextBox Name="Password" HorizontalAlignment="Left" Height="32" Margin="288,217,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" TextAlignment="Center" FontSize="20" />
+        <Label Name="Horda" Content="" HorizontalAlignment="Left" Height="202" Margin="29,145,0,0" VerticalAlignment="Top" Width="190">
+            <Label.Background>
+                <ImageBrush ImageSource="/horda-png-4.png"/>
+            </Label.Background>
+        </Label>
+        <Label Name="Alis" Content="" HorizontalAlignment="Left" Height="202" Margin="571,145,0,0" VerticalAlignment="Top" Width="190">
+            <Label.Background>
+                <ImageBrush ImageSource="/Logo-Alianza.png"/>
+            </Label.Background>
+        </Label>
+        <Button Name="btndelete" Content="Delete all Accounts" HorizontalAlignment="Left" Height="24" Margin="21,376,0,0" VerticalAlignment="Top" Width="193" Click="Button_Click_2"/>
+        <Button Name="btnlogin" Content="Login" HorizontalAlignment="Left" Height="28" Margin="322,278,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click_3"/>
+        <Button Name="btnregister" Content="Register" HorizontalAlignment="Left" Height="29" Margin="322,322,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="5570fc3fa3881acf2eca1b6b65224dd9.jpg" />
+    <None Remove="7527fba970c07d8c29aa2b9cbdb5be08.jpg" />
+    <None Remove="d373d97a7303f5110d69ba4699ac2bb8.jpg" />
+    <None Remove="deathwing-world-of-warcraft-game-android-best-wallpaper.jpg" />
+    <None Remove="D_NQ_NP_891399-MCO31035758957_062019-V.jpg" />
+    <None Remove="horda-png-4.png" />
+    <None Remove="kisspng-world-of-warcraft-mists-of-pandaria-orda-portable-index-of-paradigmwp-contentuploads2-141-5bea100166af42.2401054115420661774206.jpg" />
+    <None Remove="Logo-Alianza.png" />
+    <None Remove="png-transparent-blue-alliance-logo-illustration-world-of-warcraft-logo-decal-wow-symmetry-sticker-warcraft.png" />
+    <None Remove="priest.jpg" />
+    <None Remove="thumb-1920-219847.jpg" />
+    <None Remove="WOW-Shadowlands_Logo.jpg" />
+    <None Remove="WowChakraTalentosGuerrero.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="5570fc3fa3881acf2eca1b6b65224dd9.jpg" />
+    <Resource Include="7527fba970c07d8c29aa2b9cbdb5be08.jpg" />
+    <Resource Include="d373d97a7303f5110d69ba4699ac2bb8.jpg" />
+    <Resource Include="deathwing-world-of-warcraft-game-android-best-wallpaper.jpg" />
+    <Resource Include="D_NQ_NP_891399-MCO31035758957_062019-V.jpg" />
+    <Resource Include="horda-png-4.png" />
+    <Resource Include="kisspng-world-of-warcraft-mists-of-pandaria-orda-portable-index-of-paradigmwp-contentuploads2-141-5bea100166af42.2401054115420661774206.jpg" />
+    <Resource Include="Logo-Alianza.png" />
+    <Resource Include="png-transparent-blue-alliance-logo-illustration-world-of-warcraft-logo-decal-wow-symmetry-sticker-warcraft.png" />
+    <Resource Include="priest.jpg" />
+    <Resource Include="thumb-1920-219847.jpg" />
+    <Resource Include="WOW-Shadowlands_Logo.jpg" />
+    <Resource Include="WowChakraTalentosGuerrero.jpg" />
+  </ItemGroup>
+
+</Project>
