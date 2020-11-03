@@ -1,37 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.IO;
 
 namespace FirstFantasy.Classes.Equipment
 {
-    class Inventory : Weapon // Esta clase perfectamente pudo ser una interfaz 
+    class Inventory : Weapon
     {
-        public static string[] Bag()
-        {
-            string Bag = @"F:\Documentos Familia Del valle Pinilla\SantiagoDelValle2020-20\Programación 1\Visual_Studio\Inventory.txt";
-            string[] c = File.ReadAllLines(Bag);
-            return c;
-        }
+        private string item;
+        private string lvl;
+        private string type;
+        private string name;
+        private string raze;
 
-        public static void AddBag(string ext)
-        {
-            string Bag = @"F:\Documentos Familia Del valle Pinilla\SantiagoDelValle2020-20\Programación 1\Visual_Studio\Inventory.txt";
-            File.AppendAllText(Bag,ext + "\n");
-        }
-
-        public static string ViewALL()
-        {
-            string Bag = @"F:\Documentos Familia Del valle Pinilla\SantiagoDelValle2020-20\Programación 1\Visual_Studio\Inventory.txt";
-            string viewbag = File.ReadAllText(Bag);
-            return viewbag;
-        }
-
-        public static void Delete()
-        {
-            string i = "";
-            string Bag = @"F:\Documentos Familia Del valle Pinilla\SantiagoDelValle2020-20\Programación 1\Visual_Studio\Inventory.txt";
-            File.WriteAllText(Bag,i);
-        }
+        public string Type { get => type; set => type = value; }
+        public string Lvl { get => lvl; set => lvl = value; }
+        public string Item { get => item; set => item = value; }
+        public string Name { get => name; set => name = value; }
+        public string Raze { get => raze; set => raze = value; }
     }
 }

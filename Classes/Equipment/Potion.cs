@@ -1,11 +1,10 @@
-﻿using FirstFantasy.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FirstFantasy.Classes.Equipment
 {
-    public class Potion : IDescribable
+    public class Potion 
     {
         public string ShowInformation()
         {

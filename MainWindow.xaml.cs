@@ -1,6 +1,5 @@
 ﻿using FirstFantasy.Classes.Equipment;
 using FirstFantasy.Classes.Player;
-using FirstFantasy.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,45 +36,90 @@ namespace FirstFantasy
         {
             if (CboxCharacter.Text == "Cleric")
             {
-                Inventory.AddBag("Rod");
+                Inventory z = new Inventory();
+                z.Item = "Rod";
+                z.Lvl = "1";
+                z.Type = "Thrall's rod";
+                DataInventory.Items.Add(z);
+                Inventory p = new Inventory();
+                p.Name = Nameheroe.Text;
+                p.Lvl = "1";
+                p.Raze = "Cleric";
+                DataCharacters.Items.Add(p);
                 Cleric c = new Cleric();
                 c.Level = 1;
                 clerigpng.Visibility = Visibility.Visible;
                 LvlHeroe.Text = "Ur level is" + c.Level;
-                Damageheroe.Text = "U have a power of" + Inventory.Rod() + "Damage Points";
-                TxtInventory.Text = Inventory.ViewALL();
+                Damageheroe.Text = "U have a power of" + Weapon.DamageRod() + "Damage Points";
             }
 
             else if (CboxCharacter.Text == "Fighter")
             {
-                Inventory.AddBag("Sword");
+                Inventory z = new Inventory();
+                z.Item = "Sword";
+                z.Lvl = "1";
+                z.Type = "This is a classic sword";
+                DataInventory.Items.Add(z);
+                Inventory p = new Inventory();
+                p.Name = Nameheroe.Text;
+                p.Lvl = "1";
+                p.Raze = "Fighter";
+                DataCharacters.Items.Add(p);
                 Fighter c = new Fighter();
                 c.Level = 1;
                 Fightpng.Visibility = Visibility.Visible;
                 LvlHeroe.Text = "Ur level is" + c.Level;
-                Damageheroe.Text = "U have a power of" + Inventory.DamageSword() + "Damage Points";
-                TxtInventory.Text = Inventory.ViewALL();
+                Damageheroe.Text = "U have a power of" + Weapon.DamageSword() + "Damage Points";
 
             }
             else if (CboxCharacter.Text == "Rouge")
             {
-                Inventory.AddBag("Potion" + "\n" + "dagger");
+                Inventory z = new Inventory();
+                Inventory x = new Inventory();
+                z.Item = "Dagger";
+                z.Lvl = "1";
+                z.Type = "Poisonous blade";
+                x.Item = "Potion";
+                x.Lvl = "1";
+                x.Type = "Energy Posion";
+                DataInventory.Items.Add(z);
+                DataInventory.Items.Add(x);
+                Inventory p = new Inventory();
+                string h = Nameheroe.Text;
+                p.Name = h;
+                p.Lvl = "1";
+                p.Raze = "Rouge";
+                DataCharacters.Items.Add(p);
                 Rouge c = new Rouge();
                 c.Level = 1;
                 RouguePng.Visibility = Visibility.Visible;
                 LvlHeroe.Text = "Ur level is" + c.Level;
-                Damageheroe.Text = "U have a power of" + (Inventory.Dagger() + Inventory.DamagePotion()) + "Damage Points";
-                TxtInventory.Text = Inventory.ViewALL();
+                Damageheroe.Text = "U have a power of" + (Weapon.DamageDagger() + Weapon.DamagePotion()) + "Damage Points";
+
             }
             else if (CboxCharacter.Text == "Wizard")
             {
-                Inventory.AddBag("mana booster" + "\n" + "Old book");
+                Inventory z = new Inventory();
+                Inventory x = new Inventory();
+                z.Item = "Mana Booster";
+                z.Lvl = "1";
+                z.Type = "Fountain of life";
+                x.Item = "Old Book";
+                x.Lvl = "1";
+                x.Type = "Dark magic";
+                DataInventory.Items.Add(z);
+                DataInventory.Items.Add(x);
+                Inventory p = new Inventory();
+                p.Name = Nameheroe.Text;
+                p.Lvl = "1";
+                p.Raze = "Wizard";
+                DataCharacters.Items.Add(p);
                 Wizard c = new Wizard();
                 c.Level = 1;
                 LvlHeroe.Text = "Ur level is" +  c.Level;
                 Wizard.Visibility = Visibility.Visible;
-                Damageheroe.Text = "U have a power of" + (Inventory.Manabooster() + Inventory.OldBook()) + "Damage Points";
-                TxtInventory.Text = Inventory.ViewALL();
+                Damageheroe.Text = "U have a power of" + (Weapon.DamageManabooster() + Weapon.DamageOldBook()) + "Damage Points";
+
             }
             else
             {
@@ -92,17 +136,11 @@ namespace FirstFantasy
                 Welcome.Visibility = Visibility.Hidden;
                 CboxCharacter.Visibility = Visibility.Hidden;
                 New.Visibility = Visibility.Visible;
-                Play.Visibility = Visibility.Visible;
-                TxtInventory.Visibility = Visibility.Visible;
-                Delete.Visibility = Visibility.Visible;
-                lblinve.Visibility = Visibility.Visible;
+                DataInventory.Visibility = Visibility.Visible;
+                lblinventory.Visibility = Visibility.Visible;
+                DataCharacters.Visibility = Visibility.Hidden;
                 Nameheroe.Text = HeroeName.Text;
             }
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Inventory.Delete();
-            TxtInventory.Text = "";
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -112,7 +150,7 @@ namespace FirstFantasy
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("You have successfully registered");
+            MessageBox.Show("You have successfully registered");
             Register.Addname(Username.Text);
             Register.Addname(Password.Text);
         }
@@ -158,11 +196,60 @@ namespace FirstFantasy
                 Welcome.Visibility = Visibility.Visible;
                 BtnCreate.Visibility = Visibility.Visible;
                 CboxCharacter.Visibility = Visibility.Visible;
+                HeroeName.Visibility = Visibility.Visible;
+                Exit.Visibility = Visibility.Visible;
+                DataCharacters.Visibility = Visibility.Visible;
             }
             else
             {
                 MessageBox.Show("invalid credentials");
             }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Horda.Visibility = Visibility.Visible;
+            Alis.Visibility = Visibility.Visible;
+            btndelete.Visibility = Visibility.Visible;
+            btnlogin.Visibility = Visibility.Visible;
+            btnregister.Visibility = Visibility.Visible;
+            Username.Visibility = Visibility.Visible;
+            Password.Visibility = Visibility.Visible;
+            BtnCreate.Visibility = Visibility.Hidden;
+            CboxCharacter.Visibility = Visibility.Hidden;
+            HeroeName.Visibility = Visibility.Hidden;
+            LvlHeroe.Visibility = Visibility.Hidden;
+            Damageheroe.Visibility = Visibility.Hidden;
+            Nameheroe.Visibility = Visibility.Hidden;
+            Welcome.Visibility = Visibility.Hidden;
+            New.Visibility = Visibility.Hidden;
+            clerigpng.Visibility = Visibility.Hidden;
+            Fightpng.Visibility = Visibility.Hidden;
+            RouguePng.Visibility = Visibility.Hidden;
+            Wizard.Visibility = Visibility.Hidden;
+            DataInventory.Visibility = Visibility.Hidden;
+            lblinventory.Visibility = Visibility.Hidden;
+            Exit.Visibility = Visibility.Hidden;
+        }
+
+        private void New_Click(object sender, RoutedEventArgs e)
+        {
+            DataCharacters.Visibility = Visibility.Visible;
+            BtnCreate.Visibility = Visibility.Visible;
+            CboxCharacter.Visibility = Visibility.Visible;
+            HeroeName.Visibility = Visibility.Visible;
+            Welcome.Visibility = Visibility.Visible;
+            Wizard.Visibility = Visibility.Hidden;
+            RouguePng.Visibility = Visibility.Hidden;
+            Fightpng.Visibility = Visibility.Hidden;
+            lblclerci.Visibility = Visibility.Hidden;
+            Nameheroe.Visibility = Visibility.Hidden;
+            lblinventory.Visibility = Visibility.Hidden;
+            Damageheroe.Visibility = Visibility.Hidden;
+            LvlHeroe.Visibility = Visibility.Hidden;
+            DataInventory.Visibility = Visibility.Hidden;
+            New.Visibility = Visibility.Hidden;
+            DataInventory.Items.Clear();
         }
     }
 }

@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="5570fc3fa3881acf2eca1b6b65224dd9.jpg" />
-    <None Remove="7527fba970c07d8c29aa2b9cbdb5be08.jpg" />
     <None Remove="d373d97a7303f5110d69ba4699ac2bb8.jpg" />
     <None Remove="deathwing-world-of-warcraft-game-android-best-wallpaper.jpg" />
     <None Remove="D_NQ_NP_891399-MCO31035758957_062019-V.jpg" />
@@ -36,6 +34,10 @@
     <Resource Include="thumb-1920-219847.jpg" />
     <Resource Include="WOW-Shadowlands_Logo.jpg" />
     <Resource Include="WowChakraTalentosGuerrero.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>

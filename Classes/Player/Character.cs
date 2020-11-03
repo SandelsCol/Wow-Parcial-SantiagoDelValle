@@ -1,11 +1,10 @@
-﻿using FirstFantasy.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FirstFantasy.Classes.Player
 {
-    public abstract class Character : IDescribable
+    public abstract class Character 
     {
         private String name;
         private int level;
