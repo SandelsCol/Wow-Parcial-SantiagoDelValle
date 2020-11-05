@@ -10,6 +10,7 @@
     <None Remove="d373d97a7303f5110d69ba4699ac2bb8.jpg" />
     <None Remove="deathwing-world-of-warcraft-game-android-best-wallpaper.jpg" />
     <None Remove="D_NQ_NP_891399-MCO31035758957_062019-V.jpg" />
+    <None Remove="H510-Black Black-WOW-Alliance-no system-front.png" />
     <None Remove="horda-png-4.png" />
     <None Remove="kisspng-world-of-warcraft-mists-of-pandaria-orda-portable-index-of-paradigmwp-contentuploads2-141-5bea100166af42.2401054115420661774206.jpg" />
     <None Remove="Logo-Alianza.png" />
@@ -18,6 +19,7 @@
     <None Remove="thumb-1920-219847.jpg" />
     <None Remove="WOW-Shadowlands_Logo.jpg" />
     <None Remove="WowChakraTalentosGuerrero.jpg" />
+    <None Remove="yq9kMlAz.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +28,7 @@
     <Resource Include="d373d97a7303f5110d69ba4699ac2bb8.jpg" />
     <Resource Include="deathwing-world-of-warcraft-game-android-best-wallpaper.jpg" />
     <Resource Include="D_NQ_NP_891399-MCO31035758957_062019-V.jpg" />
+    <Resource Include="H510-Black Black-WOW-Alliance-no system-front.png" />
     <Resource Include="horda-png-4.png" />
     <Resource Include="kisspng-world-of-warcraft-mists-of-pandaria-orda-portable-index-of-paradigmwp-contentuploads2-141-5bea100166af42.2401054115420661774206.jpg" />
     <Resource Include="Logo-Alianza.png" />
@@ -34,6 +37,7 @@
     <Resource Include="thumb-1920-219847.jpg" />
     <Resource Include="WOW-Shadowlands_Logo.jpg" />
     <Resource Include="WowChakraTalentosGuerrero.jpg" />
+    <Resource Include="yq9kMlAz.png" />
   </ItemGroup>
 
   <ItemGroup>

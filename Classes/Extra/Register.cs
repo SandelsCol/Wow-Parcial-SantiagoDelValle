@@ -27,7 +27,7 @@ namespace FirstFantasy.Classes.Extra
             File.WriteAllText(way, i);
         }
 
-        public static string[] cont()
+        public static string[] Cont()
         {
             string way = @"F:\Documentos Familia Del valle Pinilla\SantiagoDelValle2020-20\Programación 1\Visual_Studio\Register.txt";
             string[] c = File.ReadAllLines(way);

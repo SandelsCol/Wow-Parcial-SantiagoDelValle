@@ -26,6 +26,7 @@ namespace FirstFantasy
     {
         bool pray;
         bool play;
+        string facts;
 
         public MainWindow()
         {
@@ -34,45 +35,83 @@ namespace FirstFantasy
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
-            if (CboxCharacter.Text == "Cleric")
+            if (Ralliance.IsChecked == true)
             {
-                Inventory z = new Inventory();
-                z.Item = "Rod";
-                z.Lvl = "1";
-                z.Type = "Thrall's rod";
+                facts = "Alliance";
+            }
+
+            if (Rhord.IsChecked == true)
+            {
+                facts = "Horde";
+            }
+
+            if (CboxCharacter.Text == "Cleric" && (Ralliance.IsChecked == true || Rhord.IsChecked == true))
+            {
+                Inventory z = new Inventory
+                {
+                    Item = "Rod",
+                    Lvl = "1",
+                    Type = "Thrall's rod"
+                };
                 DataInventory.Items.Add(z);
                 Inventory p = new Inventory();
-                p.Name = Nameheroe.Text;
+                string text = HeroeName.Text;
+                p.Name = text;
                 p.Lvl = "1";
                 p.Raze = "Cleric";
+                p.Fact = facts;
                 DataCharacters.Items.Add(p);
-                Cleric c = new Cleric();
-                c.Level = 1;
+                Cleric c = new Cleric
+                {
+                    Level = 1
+                };
+                if (facts == "Alliance")
+                {
+                    pnaliance.Visibility = Visibility.Visible;
+                }
+                else if (facts == "Horde")
+                {
+                    pnhorde.Visibility = Visibility.Visible;
+                }
                 clerigpng.Visibility = Visibility.Visible;
                 LvlHeroe.Text = "Ur level is" + c.Level;
                 Damageheroe.Text = "U have a power of" + Weapon.DamageRod() + "Damage Points";
             }
 
-            else if (CboxCharacter.Text == "Fighter")
+            else if (CboxCharacter.Text == "Fighter" && (Ralliance.IsChecked == true || Rhord.IsChecked == true))
             {
-                Inventory z = new Inventory();
-                z.Item = "Sword";
-                z.Lvl = "1";
-                z.Type = "This is a classic sword";
+                Inventory z = new Inventory
+                {
+                    Item = "Sword",
+                    Lvl = "1",
+                    Type = "This is a classic sword"
+                };
                 DataInventory.Items.Add(z);
                 Inventory p = new Inventory();
-                p.Name = Nameheroe.Text;
+                string text = HeroeName.Text;
+                p.Name = text;
                 p.Lvl = "1";
                 p.Raze = "Fighter";
+                p.Fact = facts;
                 DataCharacters.Items.Add(p);
-                Fighter c = new Fighter();
-                c.Level = 1;
+                Fighter c = new Fighter
+                {
+                    Level = 1
+                };
                 Fightpng.Visibility = Visibility.Visible;
                 LvlHeroe.Text = "Ur level is" + c.Level;
                 Damageheroe.Text = "U have a power of" + Weapon.DamageSword() + "Damage Points";
+                if (facts == "Alliance")
+                {
+                    pnaliance.Visibility = Visibility.Visible;
+                }
+                else if (facts == "Horde")
+                {
+                    pnhorde.Visibility = Visibility.Visible;
+                }
 
             }
-            else if (CboxCharacter.Text == "Rouge")
+            else if (CboxCharacter.Text == "Rouge" && (Ralliance.IsChecked == true || Rhord.IsChecked == true))
             {
                 Inventory z = new Inventory();
                 Inventory x = new Inventory();
@@ -85,19 +124,30 @@ namespace FirstFantasy
                 DataInventory.Items.Add(z);
                 DataInventory.Items.Add(x);
                 Inventory p = new Inventory();
-                string h = Nameheroe.Text;
-                p.Name = h;
+                string text = HeroeName.Text;
+                p.Name = text;
                 p.Lvl = "1";
                 p.Raze = "Rouge";
+                p.Fact = facts;
                 DataCharacters.Items.Add(p);
-                Rouge c = new Rouge();
-                c.Level = 1;
+                Rouge c = new Rouge
+                {
+                    Level = 1
+                };
                 RouguePng.Visibility = Visibility.Visible;
                 LvlHeroe.Text = "Ur level is" + c.Level;
                 Damageheroe.Text = "U have a power of" + (Weapon.DamageDagger() + Weapon.DamagePotion()) + "Damage Points";
+                if (facts == "Alliance")
+                {
+                    pnaliance.Visibility = Visibility.Visible;
+                }
+                else if (facts == "Horde")
+                {
+                    pnhorde.Visibility = Visibility.Visible;
+                }
 
             }
-            else if (CboxCharacter.Text == "Wizard")
+            else if (CboxCharacter.Text == "Wizard" && (Ralliance.IsChecked == true || Rhord.IsChecked == true))
             {
                 Inventory z = new Inventory();
                 Inventory x = new Inventory();
@@ -110,23 +160,34 @@ namespace FirstFantasy
                 DataInventory.Items.Add(z);
                 DataInventory.Items.Add(x);
                 Inventory p = new Inventory();
-                p.Name = Nameheroe.Text;
+                string text = HeroeName.Text;
+                p.Name = text;
                 p.Lvl = "1";
                 p.Raze = "Wizard";
+                p.Fact = facts;
                 DataCharacters.Items.Add(p);
-                Wizard c = new Wizard();
-                c.Level = 1;
-                LvlHeroe.Text = "Ur level is" +  c.Level;
+                Wizard c = new Wizard
+                {
+                    Level = 1
+                };
+                LvlHeroe.Text = "Ur level is" + c.Level;
                 Wizard.Visibility = Visibility.Visible;
                 Damageheroe.Text = "U have a power of" + (Weapon.DamageManabooster() + Weapon.DamageOldBook()) + "Damage Points";
-
+                if (facts == "Alliance")
+                {
+                    pnaliance.Visibility = Visibility.Visible;
+                }
+                else if (facts == "Horde")
+                {
+                    pnhorde.Visibility = Visibility.Visible;
+                }
             }
             else
             {
                 MessageBox.Show("Select One Class");
             }
 
-            if (CboxCharacter.Text == "Fighter" || CboxCharacter.Text == "Cleric" || CboxCharacter.Text == "Rouge" || CboxCharacter.Text == "Wizard")
+            if (CboxCharacter.Text == "Fighter" || CboxCharacter.Text == "Cleric" || CboxCharacter.Text == "Rouge" || CboxCharacter.Text == "Wizard" && (Ralliance.IsChecked == true || Rhord.IsChecked == true))
             {
                 BtnCreate.Visibility = Visibility.Hidden;
                 HeroeName.Visibility = Visibility.Hidden;
@@ -139,6 +200,9 @@ namespace FirstFantasy
                 DataInventory.Visibility = Visibility.Visible;
                 lblinventory.Visibility = Visibility.Visible;
                 DataCharacters.Visibility = Visibility.Hidden;
+                Ralliance.Visibility = Visibility.Hidden;
+                Rhord.Visibility = Visibility.Hidden;
+                Deletecharacter.Visibility = Visibility.Hidden;
                 Nameheroe.Text = HeroeName.Text;
             }
         }
@@ -157,7 +221,7 @@ namespace FirstFantasy
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            string[] p = Register.cont();
+            string[] p = Register.Cont();
 
             for (int i = 0; i < p.Length; i += 2)
             {
@@ -199,6 +263,11 @@ namespace FirstFantasy
                 HeroeName.Visibility = Visibility.Visible;
                 Exit.Visibility = Visibility.Visible;
                 DataCharacters.Visibility = Visibility.Visible;
+                Ralliance.Visibility = Visibility.Visible;
+                Rhord.Visibility = Visibility.Visible;
+                pnhorde.Visibility = Visibility.Hidden;
+                pnaliance.Visibility = Visibility.Hidden;
+                Deletecharacter.Visibility = Visibility.Visible;
             }
             else
             {
@@ -230,6 +299,12 @@ namespace FirstFantasy
             DataInventory.Visibility = Visibility.Hidden;
             lblinventory.Visibility = Visibility.Hidden;
             Exit.Visibility = Visibility.Hidden;
+            DataCharacters.Visibility = Visibility.Hidden;
+            Ralliance.Visibility = Visibility.Hidden;
+            Rhord.Visibility = Visibility.Hidden;
+            pnhorde.Visibility = Visibility.Hidden;
+            pnaliance.Visibility = Visibility.Hidden;
+            Deletecharacter.Visibility = Visibility.Hidden;
         }
 
         private void New_Click(object sender, RoutedEventArgs e)
@@ -249,7 +324,18 @@ namespace FirstFantasy
             LvlHeroe.Visibility = Visibility.Hidden;
             DataInventory.Visibility = Visibility.Hidden;
             New.Visibility = Visibility.Hidden;
+            clerigpng.Visibility = Visibility.Hidden;
+            Ralliance.Visibility = Visibility.Visible;
+            Rhord.Visibility = Visibility.Visible;
+            pnhorde.Visibility = Visibility.Hidden;
+            pnaliance.Visibility = Visibility.Hidden;
+            Deletecharacter.Visibility = Visibility.Visible;
             DataInventory.Items.Clear();
+        }
+
+        private void Deletecharacter_Click(object sender, RoutedEventArgs e)
+        {
+            DataCharacters.Items.Clear();
         }
     }
 }

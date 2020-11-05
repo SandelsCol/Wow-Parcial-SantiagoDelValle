@@ -13,8 +13,8 @@
                 <GradientStop Color="#FF444444" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button Name="BtnCreate" Visibility="Hidden" Content="Create" HorizontalAlignment="Left" Margin="230,380,0,0" VerticalAlignment="Top" Width="114" Click="BtnCreate_Click"/>
-        <ComboBox Name="CboxCharacter" Visibility="Hidden" HorizontalAlignment="Left" Margin="224,179,0,0" VerticalAlignment="Top" Width="120" >
+        <Button Name="BtnCreate" Visibility="Hidden" Content="Create" HorizontalAlignment="Left" Margin="288,380,0,0" VerticalAlignment="Top" Width="114" Click="BtnCreate_Click"/>
+        <ComboBox Name="CboxCharacter" Visibility="Hidden" HorizontalAlignment="Left" Margin="285,277,0,0" VerticalAlignment="Top" Width="120" >
             <ComboBoxItem Content="" IsSelected="True" />
             <ComboBoxItem Content="Cleric" />
             <ComboBoxItem Content="Fighter" />
@@ -51,11 +51,11 @@
                 <ImageBrush ImageSource="/7527fba970c07d8c29aa2b9cbdb5be08.jpg"/>
             </Label.Background>
         </Label>
-        <TextBox Name="HeroeName" Visibility="Hidden" HorizontalAlignment="Left" Height="24" Margin="224,140,0,0" Text="Name of ur heroe" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" TextAlignment="Center"/>
+        <TextBox Name="HeroeName" Visibility="Hidden" HorizontalAlignment="Left" Height="24" Margin="288,140,0,0" Text="Name of ur heroe" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" TextAlignment="Center"/>
         <TextBlock Name="Nameheroe" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="400,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" Background="#FFB6B2B2"/>
         <TextBlock Name="LvlHeroe" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="400,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Background="#FFB6B2B2"/>
         <TextBlock Name="Damageheroe" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="507,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Background="#FFB6B2B2"/>
-        <Label Name="Welcome" Visibility="Hidden" Content="" HorizontalAlignment="Left" Height="288" Margin="481,88,0,0" VerticalAlignment="Top" Width="265">
+        <Label Name="Welcome" Visibility="Hidden" Content="" HorizontalAlignment="Left" Height="312" Margin="481,88,0,0" VerticalAlignment="Top" Width="265">
             <Label.Background>
                 <ImageBrush ImageSource="/deathwing-world-of-warcraft-game-android-best-wallpaper.jpg"/>
             </Label.Background>
@@ -76,7 +76,7 @@
         <Button Name="btndelete" Visibility="Visible" Content="Delete all Accounts" HorizontalAlignment="Left" Height="24" Margin="21,376,0,0" VerticalAlignment="Top" Width="193" Click="Button_Click_2"/>
         <Button Name="btnlogin" Visibility="Visible" Content="Login" HorizontalAlignment="Left" Height="28" Margin="322,278,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click_3"/>
         <Button Name="btnregister" Visibility="Visible" Content="Register" HorizontalAlignment="Left" Height="29" Margin="322,324,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click_1"/>
-        <Button Name="Exit" Visibility="Visible" Content="Exit" HorizontalAlignment="Left" Height="22" Margin="709,10,0,0" VerticalAlignment="Top" Width="81" Click="Button_Click_4"/>
+        <Button Name="Exit" Visibility="Hidden" Content="Exit" HorizontalAlignment="Left" Height="22" Margin="709,10,0,0" VerticalAlignment="Top" Width="81" Click="Button_Click_4"/>
         <DataGrid Name="DataInventory" Visibility="Hidden" HorizontalAlignment="Left" Height="202" Margin="9,198,0,0" VerticalAlignment="Top" Width="274">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Items" Width="50" Binding="{Binding Item}"/>
@@ -85,13 +85,26 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label Name="lblinventory" Visibility="Hidden" Content="Inventory" HorizontalAlignment="Left" Height="31" Margin="110,149,0,0" VerticalAlignment="Top" Width="72" Background="White" FontSize="14"/>
-        <DataGrid Name="DataCharacters" Visibility="Hidden" HorizontalAlignment="Left" Height="261" Margin="21,139,0,0" VerticalAlignment="Top" Width="197">
+        <DataGrid Name="DataCharacters" Visibility="Hidden" HorizontalAlignment="Left" Height="232" Margin="21,139,0,0" VerticalAlignment="Top" Width="247">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Character" Width="100" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Class" Width="60" Binding="{Binding Raze}"/>
                 <DataGridTextColumn Header="Lvl" Width="30" Binding="{Binding Lvl}"/>
-
+                <DataGridTextColumn Header="faction" Width="60" Binding="{Binding Fact}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <RadioButton Name="Rhord" Content="Horde" Visibility="Hidden" HorizontalAlignment="Left" Margin="288,198,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <RadioButton Name="Ralliance" Content="Alliance" Visibility="Hidden" HorizontalAlignment="Left" Margin="288,233,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Name="pnaliance" Content="" Visibility="Hidden" HorizontalAlignment="Left" Height="364" Margin="253,60,0,0" VerticalAlignment="Top" Width="173">
+            <Label.Background>
+                <ImageBrush ImageSource="/H510-Black Black-WOW-Alliance-no system-front.png"/>
+            </Label.Background>
+        </Label>
+        <Label Name="pnhorde" Content="" Visibility="Hidden" HorizontalAlignment="Left" Height="364" Margin="253,58,0,0" VerticalAlignment="Top" Width="173">
+            <Label.Background>
+                <ImageBrush ImageSource="/yq9kMlAz.png"/>
+            </Label.Background>
+        </Label>
+        <Button Name="Deletecharacter" Content="Delete all characters" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="56,380,0,0" VerticalAlignment="Top" Width="176" Click="Deletecharacter_Click"/>
     </Grid>
 </Window>
