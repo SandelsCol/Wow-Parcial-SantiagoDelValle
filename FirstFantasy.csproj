@@ -7,34 +7,50 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="1D6IvP.png" />
+    <None Remove="260px-Thrall.jpg" />
+    <None Remove="907495cc25082f5b53d497ef7902821a.png" />
+    <None Remove="cane_up.png" />
+    <None Remove="clipart-house-middle-ages-16.png" />
     <None Remove="d373d97a7303f5110d69ba4699ac2bb8.jpg" />
     <None Remove="deathwing-world-of-warcraft-game-android-best-wallpaper.jpg" />
     <None Remove="D_NQ_NP_891399-MCO31035758957_062019-V.jpg" />
+    <None Remove="FrostmourneLegion.png" />
     <None Remove="H510-Black Black-WOW-Alliance-no system-front.png" />
     <None Remove="horda-png-4.png" />
     <None Remove="kisspng-world-of-warcraft-mists-of-pandaria-orda-portable-index-of-paradigmwp-contentuploads2-141-5bea100166af42.2401054115420661774206.jpg" />
     <None Remove="Logo-Alianza.png" />
+    <None Remove="oro-400x254.png" />
     <None Remove="png-transparent-blue-alliance-logo-illustration-world-of-warcraft-logo-decal-wow-symmetry-sticker-warcraft.png" />
     <None Remove="priest.jpg" />
     <None Remove="thumb-1920-219847.jpg" />
+    <None Remove="ui_item_potion_HealingPotion.png" />
     <None Remove="WOW-Shadowlands_Logo.jpg" />
     <None Remove="WowChakraTalentosGuerrero.jpg" />
     <None Remove="yq9kMlAz.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="1D6IvP.png" />
+    <Resource Include="260px-Thrall.jpg" />
     <Resource Include="5570fc3fa3881acf2eca1b6b65224dd9.jpg" />
     <Resource Include="7527fba970c07d8c29aa2b9cbdb5be08.jpg" />
+    <Resource Include="907495cc25082f5b53d497ef7902821a.png" />
+    <Resource Include="cane_up.png" />
+    <Resource Include="clipart-house-middle-ages-16.png" />
     <Resource Include="d373d97a7303f5110d69ba4699ac2bb8.jpg" />
     <Resource Include="deathwing-world-of-warcraft-game-android-best-wallpaper.jpg" />
     <Resource Include="D_NQ_NP_891399-MCO31035758957_062019-V.jpg" />
+    <Resource Include="FrostmourneLegion.png" />
     <Resource Include="H510-Black Black-WOW-Alliance-no system-front.png" />
     <Resource Include="horda-png-4.png" />
     <Resource Include="kisspng-world-of-warcraft-mists-of-pandaria-orda-portable-index-of-paradigmwp-contentuploads2-141-5bea100166af42.2401054115420661774206.jpg" />
     <Resource Include="Logo-Alianza.png" />
+    <Resource Include="oro-400x254.png" />
     <Resource Include="png-transparent-blue-alliance-logo-illustration-world-of-warcraft-logo-decal-wow-symmetry-sticker-warcraft.png" />
     <Resource Include="priest.jpg" />
     <Resource Include="thumb-1920-219847.jpg" />
+    <Resource Include="ui_item_potion_HealingPotion.png" />
     <Resource Include="WOW-Shadowlands_Logo.jpg" />
     <Resource Include="WowChakraTalentosGuerrero.jpg" />
     <Resource Include="yq9kMlAz.png" />

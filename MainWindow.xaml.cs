@@ -27,6 +27,7 @@ namespace FirstFantasy
         bool pray;
         bool play;
         string facts;
+        int money = 15;
 
         public MainWindow()
         {
@@ -51,7 +52,7 @@ namespace FirstFantasy
                 {
                     Item = "Rod",
                     Lvl = "1",
-                    Type = "Thrall's rod"
+                    Type = "Thrall's rod",
                 };
                 DataInventory.Items.Add(z);
                 Inventory p = new Inventory();
@@ -75,7 +76,6 @@ namespace FirstFantasy
                 }
                 clerigpng.Visibility = Visibility.Visible;
                 LvlHeroe.Text = "Ur level is" + c.Level;
-                Damageheroe.Text = "U have a power of" + Weapon.DamageRod() + "Damage Points";
             }
 
             else if (CboxCharacter.Text == "Fighter" && (Ralliance.IsChecked == true || Rhord.IsChecked == true))
@@ -84,7 +84,7 @@ namespace FirstFantasy
                 {
                     Item = "Sword",
                     Lvl = "1",
-                    Type = "This is a classic sword"
+                    Type = "This is a classic sword",
                 };
                 DataInventory.Items.Add(z);
                 Inventory p = new Inventory();
@@ -100,7 +100,6 @@ namespace FirstFantasy
                 };
                 Fightpng.Visibility = Visibility.Visible;
                 LvlHeroe.Text = "Ur level is" + c.Level;
-                Damageheroe.Text = "U have a power of" + Weapon.DamageSword() + "Damage Points";
                 if (facts == "Alliance")
                 {
                     pnaliance.Visibility = Visibility.Visible;
@@ -136,7 +135,6 @@ namespace FirstFantasy
                 };
                 RouguePng.Visibility = Visibility.Visible;
                 LvlHeroe.Text = "Ur level is" + c.Level;
-                Damageheroe.Text = "U have a power of" + (Weapon.DamageDagger() + Weapon.DamagePotion()) + "Damage Points";
                 if (facts == "Alliance")
                 {
                     pnaliance.Visibility = Visibility.Visible;
@@ -172,7 +170,6 @@ namespace FirstFantasy
                 };
                 LvlHeroe.Text = "Ur level is" + c.Level;
                 Wizard.Visibility = Visibility.Visible;
-                Damageheroe.Text = "U have a power of" + (Weapon.DamageManabooster() + Weapon.DamageOldBook()) + "Damage Points";
                 if (facts == "Alliance")
                 {
                     pnaliance.Visibility = Visibility.Visible;
@@ -203,13 +200,17 @@ namespace FirstFantasy
                 Ralliance.Visibility = Visibility.Hidden;
                 Rhord.Visibility = Visibility.Hidden;
                 Deletecharacter.Visibility = Visibility.Hidden;
+                btnattack.Visibility = Visibility.Visible;
+                btnshop.Visibility = Visibility.Visible;
                 Nameheroe.Text = HeroeName.Text;
+                Damageheroe.Text = "";
             }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             Register.Delete();
+            MessageBox.Show("U just deleted all existing accounts");
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -268,6 +269,8 @@ namespace FirstFantasy
                 pnhorde.Visibility = Visibility.Hidden;
                 pnaliance.Visibility = Visibility.Hidden;
                 Deletecharacter.Visibility = Visibility.Visible;
+                btnattack.Visibility = Visibility.Hidden;
+                DataCharacters.Items.Clear();
             }
             else
             {
@@ -305,6 +308,27 @@ namespace FirstFantasy
             pnhorde.Visibility = Visibility.Hidden;
             pnaliance.Visibility = Visibility.Hidden;
             Deletecharacter.Visibility = Visibility.Hidden;
+            btnattack.Visibility = Visibility.Hidden;
+            Btnback.Visibility = Visibility.Hidden;
+            txtmoney.Visibility = Visibility.Hidden;
+            PNGdailystore.Visibility = Visibility.Hidden;
+            PNGdemonicrod.Visibility = Visibility.Hidden;
+            PNGgold.Visibility = Visibility.Hidden;
+            PNGHealpotion.Visibility = Visibility.Hidden;
+            PNGinfernalsword.Visibility = Visibility.Hidden;
+            PNGthrall.Visibility = Visibility.Hidden;
+            PNGmagicboots.Visibility = Visibility.Hidden;
+            checkdemonicrod.Visibility = Visibility.Hidden;
+            checkhealpotion.Visibility = Visibility.Hidden;
+            checkmagicboots.Visibility = Visibility.Hidden;
+            chekfiresword.Visibility = Visibility.Hidden;
+            sword1.Visibility = Visibility.Hidden;
+            sword2.Visibility = Visibility.Hidden;
+            BtnBuy.Visibility = Visibility.Hidden;
+            DataInventory.Visibility = Visibility.Hidden;
+            money = 15;
+            DataInventory.Items.Clear();
+            DataCharacters.Items.Clear();
         }
 
         private void New_Click(object sender, RoutedEventArgs e)
@@ -330,12 +354,219 @@ namespace FirstFantasy
             pnhorde.Visibility = Visibility.Hidden;
             pnaliance.Visibility = Visibility.Hidden;
             Deletecharacter.Visibility = Visibility.Visible;
+            btnattack.Visibility = Visibility.Hidden;
+            btnshop.Visibility = Visibility.Hidden;
+            money = 15;
             DataInventory.Items.Clear();
         }
 
         private void Deletecharacter_Click(object sender, RoutedEventArgs e)
         {
             DataCharacters.Items.Clear();
+        }
+
+        private void Btnattack_Click(object sender, RoutedEventArgs e)
+        {
+            if (CboxCharacter.Text == "Cleric")
+            {
+                Damageheroe.Text = "U have a damage of" + (Weapon.DamageRod()) + "points";
+            }
+            else if(CboxCharacter.Text == "Fighter")
+            {
+                Damageheroe.Text = "U have a damage of" + (Weapon.DamageSword()) + "points";
+            }
+            else if(CboxCharacter.Text == "Rouge")
+            {
+                Damageheroe.Text = "U have a damage of" + (Weapon.DamageDagger() + Weapon.DamagePotion()) + "points";
+            }
+            else if (CboxCharacter.Text == "Wizard")
+            {
+                Damageheroe.Text = "U have a damage of" +  (Weapon.DamageManabooster() + Weapon.DamageOldBook()) + "points";
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (money > 0)
+            {
+                if (checkdemonicrod.IsChecked == true)
+                {
+                    Inventory p = new Inventory
+                    {
+                        Item = "Demonic Rod",
+                        Lvl = "1",
+                        Type = "a curse of the legion"
+                    };
+
+                    if (money > 10)
+                    {
+                        money -= 10;
+                        DataInventory.Items.Add(p);
+                    }
+                    else
+                    {
+                        MessageBox.Show("U need 10 gold bullion for Demonic Rod");
+                    }
+                }
+
+                if (checkmagicboots.IsChecked == true)
+                {
+                    Inventory p = new Inventory
+                    {
+                        Item = "Magic Boots",
+                        Lvl = "1",
+                        Type = "A splendid surprise"
+                    };
+
+                    if (money > 3)
+                    {
+                        money -= 3;
+                        DataInventory.Items.Add(p);
+                    }
+                    else
+                    {
+                        MessageBox.Show("U need 3 gold bullion for Demonic Magic boots");
+                    }
+                }
+
+                if (checkhealpotion.IsChecked == true)
+                {
+                    Inventory p = new Inventory
+                    {
+                        Item = "Heal Potion",
+                        Lvl = "1",
+                        Type = "Basic potion of life"
+                    };
+
+                    if (money > 2)
+                    {
+                        money -= 2;
+                        DataInventory.Items.Add(p);
+                    }
+                    else
+                    {
+                        MessageBox.Show("U need 2 gold bullion for Heal Potion");
+                    }
+                }
+
+                if (chekfiresword.IsChecked == true)
+                {
+                    Inventory p = new Inventory
+                    {
+                        Item = "Infernal Sword",
+                        Lvl = "1",
+                        Type = "The purest flames"
+                    };
+
+                    if (money > 7)
+                    {
+                        money -= 7;
+                        DataInventory.Items.Add(p);
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("U need 7 gold bullion for Infernal Sword");
+                    }
+                }
+
+                txtmoney.Text = "U have" + money + "gold bullion";
+            }
+        }        
+
+        private void Btnshop_Click(object sender, RoutedEventArgs e)
+        {
+            txtmoney.Text = "U have" + money + "gold bullion";
+            Btnback.Visibility = Visibility.Visible;
+            txtmoney.Visibility = Visibility.Visible;
+            PNGdailystore.Visibility = Visibility.Visible;
+            PNGdemonicrod.Visibility = Visibility.Visible;
+            PNGgold.Visibility = Visibility.Visible;
+            PNGHealpotion.Visibility = Visibility.Visible;
+            PNGinfernalsword.Visibility = Visibility.Visible;
+            PNGthrall.Visibility = Visibility.Visible;
+            PNGmagicboots.Visibility = Visibility.Visible;
+            checkdemonicrod.Visibility = Visibility.Visible;
+            checkhealpotion.Visibility = Visibility.Visible;
+            checkmagicboots.Visibility = Visibility.Visible;
+            chekfiresword.Visibility = Visibility.Visible;
+            sword1.Visibility = Visibility.Visible;
+            sword2.Visibility = Visibility.Visible;
+            BtnBuy.Visibility = Visibility.Visible;
+            DataInventory.Visibility = Visibility.Visible;
+            btnshop.Visibility = Visibility.Hidden;
+            HeroeName.Visibility = Visibility.Hidden;
+            LvlHeroe.Visibility = Visibility.Hidden;
+            Damageheroe.Visibility = Visibility.Hidden;
+            New.Visibility = Visibility.Hidden;
+            clerigpng.Visibility = Visibility.Hidden;
+            Fightpng.Visibility = Visibility.Hidden;
+            RouguePng.Visibility = Visibility.Hidden;
+            Wizard.Visibility = Visibility.Hidden;
+            lblinventory.Visibility = Visibility.Hidden;
+            Exit.Visibility = Visibility.Visible;
+            btnattack.Visibility = Visibility.Hidden;
+            Nameheroe.Visibility = Visibility.Hidden;
+            pnaliance.Visibility = Visibility.Hidden;
+            pnhorde.Visibility = Visibility.Hidden;
+        }
+
+        private void Btnback_Click(object sender, RoutedEventArgs e)
+        {
+            Btnback.Visibility = Visibility.Hidden;
+            txtmoney.Visibility = Visibility.Hidden;
+            PNGdailystore.Visibility = Visibility.Hidden;
+            PNGdemonicrod.Visibility = Visibility.Hidden;
+            PNGgold.Visibility = Visibility.Hidden;
+            PNGHealpotion.Visibility = Visibility.Hidden;
+            PNGinfernalsword.Visibility = Visibility.Hidden;
+            PNGthrall.Visibility = Visibility.Hidden;
+            PNGmagicboots.Visibility = Visibility.Hidden;
+            checkdemonicrod.Visibility = Visibility.Hidden;
+            checkhealpotion.Visibility = Visibility.Hidden;
+            checkmagicboots.Visibility = Visibility.Hidden;
+            chekfiresword.Visibility = Visibility.Hidden;
+            sword1.Visibility = Visibility.Hidden;
+            sword2.Visibility = Visibility.Hidden;
+            BtnBuy.Visibility = Visibility.Hidden;
+            btnshop.Visibility = Visibility.Visible;
+            LvlHeroe.Visibility = Visibility.Visible;
+            Damageheroe.Visibility = Visibility.Visible;
+            Nameheroe.Visibility = Visibility.Visible;
+            New.Visibility = Visibility.Visible;
+            btnattack.Visibility = Visibility.Visible;
+            btnshop.Visibility = Visibility.Visible;
+            lblinventory.Visibility = Visibility.Visible;
+
+            if (CboxCharacter.Text == "Fighter")
+            {
+                Fightpng.Visibility = Visibility.Visible;
+
+            }else if (CboxCharacter.Text == "Cleric")
+            {
+                clerigpng.Visibility = Visibility.Visible;
+
+            }else if (CboxCharacter.Text == "Rouge")
+            {
+                RouguePng.Visibility = Visibility.Visible;
+
+            }else if (CboxCharacter.Text == "Wizard")
+            {
+                Wizard.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MessageBox.Show("End of the program");
+            }
+
+            if (facts == "Alliance")
+            {
+                pnaliance.Visibility = Visibility.Visible;
+            }
+            else if (facts == "Horde")
+            {
+                pnhorde.Visibility = Visibility.Visible;
+            }
         }
     }
 }
